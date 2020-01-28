@@ -1,0 +1,92 @@
+curl -X POST -H "Content-Type: application/json" -d '{
+  "get_started": {"payload": "GET_STARTED_GOBOT"}
+}' "https://graph.facebook.com/v5.0/me/messenger_profile?access_token=EAAIhiCsv0VMBAAtSrpfUYdNKZAnfBnxfj6ZAZB8Y6AKunkQGi71wXEQKMiU4Q6mcuZA0ZCD3inDgokYffL0iGTR1kyhPXvMuZBYg2kWYN21TZBBUc1YOmZCB8wkx9WPlLkwM1ZCViRnxZCBpZBVvxxuVQNNhVZAPK4ndsE037UXCssB7QQZDZD"
+
+
+
+curl -X POST -H "Content-Type: application/json" -d '{
+  "greeting": [
+    {
+      "locale": "default",
+      "text": "Hola {{user_first_name}}, bienvenido a GoBot"
+    }
+  ]
+}' "https://graph.facebook.com/v5.0/me/messenger_profile?access_token=EAAIhiCsv0VMBAAtSrpfUYdNKZAnfBnxfj6ZAZB8Y6AKunkQGi71wXEQKMiU4Q6mcuZA0ZCD3inDgokYffL0iGTR1kyhPXvMuZBYg2kWYN21TZBBUc1YOmZCB8wkx9WPlLkwM1ZCViRnxZCBpZBVvxxuVQNNhVZAPK4ndsE037UXCssB7QQZDZD"
+
+
+
+
+
+curl -X POST -H "Content-Type: application/json" -d '{
+  "persistent_menu": [
+    {
+      "locale": "default",
+      "composer_input_disabled": false,
+      "call_to_actions": [
+      {
+        "title": "🍕 PugPizza ",
+        "type": "nested",
+        "call_to_actions": [
+            {
+              "title": "Acerca",
+              "type": "postback",
+              "payload": "ABOUT_PAYLOAD"
+            },
+            {
+              "title": "Sucursales",
+              "type": "postback",
+              "payload": "LOCATIONS_PAYLOAD"
+            },
+            {
+              "title": "Ayuda",
+              "type": "postback",
+              "payload": "HELP_PAYLOAD"
+            },
+            {
+              "title": "Contacto",
+              "type": "postback",
+              "payload": "CONTACT_PAYLOAD"
+            }
+        ]
+      },
+      {
+        "title": "💚 Menu de Productos",
+        "type": "nested",
+        "call_to_actions": [{
+            "title": "Pizzas",
+            "type": "postback",
+            "payload": "PIZZAS_PAYLOAD"
+          },
+          {
+            "title": "Especialidades",
+            "type": "postback",
+            "payload": "SPECIALS_PAYLOAD"
+          },
+          {
+            "title": "Bebidas",
+            "type": "postback",
+            "payload": "DRINKS_PAYLOAD"
+          },
+          {
+            "title": "Promociones",
+            "type": "postback",
+            "payload": "PROMOTIONS_PAYLOAD"
+          }
+        ]
+      },
+      {
+        "type": "web_url",
+        "title": "🐶 Pagina Web",
+        "url": "http://platzi.com/bots-messenger/",
+        "webview_height_ratio": "full"
+      }
+    ]
+  }]
+}' "https://graph.facebook.com/v5.0/me/messenger_profile?access_token=EAAIhiCsv0VMBAAtSrpfUYdNKZAnfBnxfj6ZAZB8Y6AKunkQGi71wXEQKMiU4Q6mcuZA0ZCD3inDgokYffL0iGTR1kyhPXvMuZBYg2kWYN21TZBBUc1YOmZCB8wkx9WPlLkwM1ZCViRnxZCBpZBVvxxuVQNNhVZAPK4ndsE037UXCssB7QQZDZD"
+
+
+##BORRAR MENU
+curl - X DELETE - H "Content-Type: application/json" - d '{
+"setting_type": "call_to_actions",
+"thread_state": "existing_thread"
+}' "https://graph.facebook.com/v5.0/me/messenger_profile?access_token=EAAIhiCsv0VMBAAtSrpfUYdNKZAnfBnxfj6ZAZB8Y6AKunkQGi71wXEQKMiU4Q6mcuZA0ZCD3inDgokYffL0iGTR1kyhPXvMuZBYg2kWYN21TZBBUc1YOmZCB8wkx9WPlLkwM1ZCViRnxZCBpZBVvxxuVQNNhVZAPK4ndsE037UXCssB7QQZDZD"
